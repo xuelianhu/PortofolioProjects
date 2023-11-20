@@ -49,7 +49,7 @@ join covidvaccainations vac
     and dea.date = vac.date
 )
 select *, (RollingPeopleVaccinated/population)*100
-from PopvsVac
+from PopvsVac;
 
 -- creating viewing to store data for later visualisation
 create view PercentPopulationVaccinated as
@@ -58,6 +58,6 @@ select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinatio
 from coviddeaths dea
 join covidvaccainations vac
 	on dea.location = vac.location
-    and dea.date = vac.date
+    and dea.date = vac.date;
 
 SELECT * FROM Covid.percentpopulationvaccinated;
