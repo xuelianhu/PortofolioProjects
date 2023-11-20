@@ -40,9 +40,6 @@ add PropertySplitCity nvarchar(255);
 update Housing.`housing.data_cleaning`
 set PropertySplitCity = substring(PropertyAddress,locate(',',PropertyAddress)+1, length(PropertyAddress));
 
-select *
-from Housing.`housing.data_cleaning`;
-
 -- change Y and N to Yes and No in " Sold as Vacant" field
 select SoldAsVacant
 , case when SoldAsVacant = 'Y' then 'Yes'
@@ -56,6 +53,7 @@ set SoldAsVacant = case when SoldAsVacant = 'Y' then 'Yes'
 	   when SoldAsVacant = 'N' then 'No'
        else SoldAsVacant
        end;
+       
 -- remove duplicates
 with RowNumCTE AS(
 select *,
