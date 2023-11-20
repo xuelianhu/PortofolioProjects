@@ -32,7 +32,7 @@ group by continent
 order by TotalDeathCount desc;
 
 -- global numbers
-select sum(new_cases),sum(new_deaths),(sum(new_deaths)/sum(new_cases))*100 as DeathPercentage
+select sum(new_cases)as total_cases,sum(new_deaths) as total_deaths,(sum(new_deaths)/sum(new_cases))*100 as DeathPercentage
 from coviddeaths
 order by 1,2;
 
