@@ -20,9 +20,9 @@ from coviddeaths
 order by 1,2;
 
 -- looking at countries with highest infection rate compared to population
-select location,population,max(total_cases)as HighestInfectionCount,max((total_cases/population))*100 as CasePercentage
+select location,population,date,max(total_cases)as HighestInfectionCount,max((total_cases/population))*100 as CasePercentage
 from coviddeaths
-group by location,population
+group by location,population,date
 order by CasePercentage desc;
 
 -- showing continents with highest death count per population
